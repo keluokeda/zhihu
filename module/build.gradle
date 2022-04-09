@@ -1,0 +1,108 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+}
+kapt {
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+        correctErrorTypes true
+    }
+    correctErrorTypes true
+}
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    resourcePrefix 'module_'
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation project(path: ':api')
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+
+    implementation(libs.retrofit.converter.moshi)
+
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    api(libs.moshi)
+    api(libs.moshi.kotlin)
+    kapt(libs.moshi.codegen)
+    api(libs.glide)
+    kapt(libs.glide.compiler)
+    kapt(libs.glide.compiler)
+    api(libs.arouter.api)
+    kapt(libs.arouter.compiler)
+    api(libs.room.runtime)
+    api(libs.room.ktx)
+    kapt(libs.room.compiler)
+
+    implementation(libs.ke.mvvm)
+    implementation(libs.hi.binding)
+    implementation(libs.circle.image)
+
+
+    api(libs.core.ktx)
+    api(libs.appcompat)
+    api(libs.material)
+    api(libs.constraint.layout)
+    api(libs.fragment.ktx)
+    api(libs.activity)
+    api(libs.lifecycle.viewmodel.ktx)
+    api(libs.lifecycle.livedata.ktx)
+    api(libs.lifecycle.runtime.ktx)
+    api(libs.support.v4)
+
+    api(libs.logger)
+    api(libs.adapter.helper)
+    api(libs.mmkv)
+
+
+}

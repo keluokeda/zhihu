@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="module_Theme.Zhihu.Activity" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/module_purple_500</item>
+        <item name="colorPrimaryVariant">@color/module_purple_700</item>
+        <item name="colorOnPrimary">@color/module_white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/module_teal_200</item>
+        <item name="colorSecondaryVariant">@color/module_teal_700</item>
+        <item name="colorOnSecondary">@color/module_black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+        <!--toolbar文字白色-->
+        <item name="actionMenuTextColor">@color/module_white</item>
+        <!--        toolbar 溢出按钮变成白色-->
+        <item name="colorControlNormal">@color/module_white</item>
+    </style>
+
+    <style name="module_Theme.Zhihu.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="p">shortEdges</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/module_bg_splash</item>
+    </style>
+</resources>

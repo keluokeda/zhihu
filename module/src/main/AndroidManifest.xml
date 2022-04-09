@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ke.zhihu.module">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MainApplication"
+        android:icon="@drawable/module_image_launcher"
+        android:label="知乎"
+        android:theme="@style/module_Theme.Zhihu.Activity">
+        <activity
+            android:name=".ui.message.MessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.comments.ChildCommentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.comments.CommentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.question.QuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.newfollow.NewFollowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.like.LikeListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.invitationanswer.InvitationAnswerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.answer.AnswerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.people.PeopleFollowersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.people.QuestionFollowersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/module_Theme.Zhihu.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
